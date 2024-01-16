@@ -43,6 +43,7 @@ onMounted(() => {
   display: grid;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 
   &__logo {
     width: 200px;
@@ -56,7 +57,7 @@ onMounted(() => {
     position: fixed;
     inset: 0;
     clip-path: circle(var(--clip) at 100% 100%);
-    z-index: 5;
+    z-index: 7;
   }
 }
 

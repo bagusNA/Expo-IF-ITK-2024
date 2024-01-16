@@ -11,11 +11,25 @@
 
     <!-- Index -->
     <div>Home</div>
+
+    <!-- Prestasi -->
+    <div class="achievement">
+      <div>Memiliki Prestasi</div>
+      <div></div>
+    </div>
+
+    <MenuButton class="menu-btn" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .page {
   position: relative;
+}
+
+.menu-btn {
+  position: fixed;
+  top: -0.8rem;
+  left: -1.65rem;
 }
 </style>
