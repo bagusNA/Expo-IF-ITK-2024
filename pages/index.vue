@@ -2,19 +2,20 @@
 </script>
 
 <template>
-  <div>
+  <div class="page">
     <Head>
       <Title>Expo IF ITK 2024</Title>
     </Head>
 
-    <!-- Loading Pertama-->
     <Loading />
 
     <!-- Index -->
-    <div>INdex</div>
+    <div>Home</div>
   </div>
 </template>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+.page {
+  position: relative;
+}
 </style>
