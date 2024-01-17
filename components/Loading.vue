@@ -24,6 +24,9 @@ onMounted(() => {
         opacity: 0,
         display: "none",
       })
+      .call(() => {
+        document.body.removeAttribute('style')
+      }, [], '-=1')
 })
 </script>
 
@@ -37,13 +40,21 @@ onMounted(() => {
 
 <style lang="scss">
 .loading {
-  position: absolute;
+  position: fixed;
   background-color: $surface;
-  inset: 0;
   display: grid;
   align-items: center;
   justify-content: center;
   z-index: 5;
+  overflow-y: hidden;
+
+  &,
+  &__expand {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
 
   &__logo {
     width: 200px;
@@ -55,7 +66,7 @@ onMounted(() => {
 
     background-color: $background;
     position: fixed;
-    inset: 0;
+    overflow-y: hidden;
     clip-path: circle(var(--clip) at 100% 100%);
     z-index: 7;
   }

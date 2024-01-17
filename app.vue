@@ -1,5 +1,11 @@
+<script setup lang="ts">
+onMounted(() => {
+  document.body.style.overflow = 'hidden'
+})
+</script>
+
 <template>
-  <div class="app">
+  <div id="app" class="app">
     <NuxtPage />
   </div>
 </template>
@@ -8,10 +14,6 @@
 @use "~/assets/styles/main.scss";
 
 .app {
-  min-height: 100vh;
-  display: grid;
-  overflow-x: hidden;
-
   color: $text-light;
   background-color: $background;
   font-family: Montserrat, Inter, serif;

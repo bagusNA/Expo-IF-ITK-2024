@@ -11,6 +11,7 @@
 
     <LayoutHero />
     <LayoutAbout />
+    <LayoutAchievement />
 
     <!-- Prestasi -->
     <div class="achievement">

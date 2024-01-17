@@ -28,6 +28,7 @@
     width: fit-content;
     margin: 0 auto;
     text-align: center;
+    font-size: 0.9rem;
   }
 
   &__logo {
@@ -46,6 +47,7 @@
       margin-bottom: 18px;
       font-weight: 600;
       position: relative;
+      font-size: 0.85rem;
 
       &:before,
       &:after {
@@ -75,6 +77,7 @@
 
     &__description {
       padding: 0 24px;
+      font-size: 0.8rem;
       font-weight: 500;
     }
   }
