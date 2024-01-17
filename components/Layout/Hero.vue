@@ -14,9 +14,7 @@
       <img src="/img/laptop.png" alt="" class="shape-laptop">
     </div>
 
-    <div class="bottom-shape">
-
-    </div>
+    <div class="bottom-shape"></div>
   </section>
 </template>
 
@@ -26,6 +24,7 @@
   padding-top: 96px;
   background: linear-gradient(180deg, $background 0, #d5d5b1 60%, #d2d2d2 100%);
   position: relative;
+  overflow: hidden;
 
   .catchphrase {
     padding: 0 32px;

@@ -9,8 +9,8 @@
 
     <Loading />
 
-    <!-- Index -->
     <LayoutHero />
+    <LayoutAbout />
 
     <!-- Prestasi -->
     <div class="achievement">
