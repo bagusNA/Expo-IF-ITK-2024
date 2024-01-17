@@ -10,7 +10,7 @@
     <Loading />
 
     <!-- Index -->
-    <div>Home</div>
+    <LayoutHero />
 
     <!-- Prestasi -->
     <div class="achievement">
@@ -25,6 +25,7 @@
 <style lang="scss" scoped>
 .page {
   position: relative;
+  width: 100%;
 }
 
 .menu-btn {

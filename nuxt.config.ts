@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   googleFonts: {
     download: true,
     families: {
-      Montserrat: true,
+      Montserrat: '200..900',
     }
   },
 })

@@ -10,6 +10,7 @@
 .app {
   min-height: 100vh;
   display: grid;
+  overflow-x: hidden;
 
   color: $text-light;
   background-color: $background;
