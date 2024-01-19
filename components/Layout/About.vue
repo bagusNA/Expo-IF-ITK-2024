@@ -21,6 +21,8 @@
 #about {
   display: grid;
   gap: 32px;
+  position: relative;
+  z-index: 2;
 }
 
 .about {

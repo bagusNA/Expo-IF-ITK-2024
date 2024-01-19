@@ -52,10 +52,11 @@ onMounted(() => {
       <Title>Expo IF ITK 2024</Title>
     </Head>
 
-<!--    <Loading />-->
+    <Loading />
 
     <LayoutHero />
     <LayoutAbout />
+    <LayoutAccreditation />
     <LayoutAchievement />
 
     <div class="gradient-section">
