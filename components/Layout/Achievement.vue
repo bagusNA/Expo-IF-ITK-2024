@@ -1,39 +1,209 @@
+<script setup lang="ts">
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+const { $gsap } = useNuxtApp()
+
+const achievements = [
+  {
+    src: '/img/achievement-1.png',
+    alt: 'Prestasi 1',
+    description: 'amet Lorem ipsum sit dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
+    type: 'Hackathon',
+  },
+  {
+    src: '/img/achievement-2.jpg',
+    alt: 'Prestasi 2',
+    description: 'Lorem ipsum sit dolor amet Lorem ipsum sit dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
+    type: 'Gemastik',
+  },
+  {
+    src: '/img/achievement-1.png',
+    alt: 'Prestasi 1',
+    description: 'dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
+    type: 'Hackathon',
+  },
+  {
+    src: '/img/achievement-2.jpg',
+    alt: 'Prestasi 2',
+    description: 'Lorem ipsum sit dolor amet Lorem ipsum sit dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
+    type: 'Gemastik',
+  },
+]
+
+const progress = useState<number>(() => 0)
+const focusedImageIndex = computed(() => {
+  const offsetPercent = 15
+  const index = Math.floor((progress.value + offsetPercent) / Math.floor(100 / achievements.length))
+
+  if (index < 0)
+    return 0
+
+  if (index >= achievements.length)
+    return achievements.length - 1
+
+  return index
+})
+
+function findOverallImageWidth() {
+  const images = $gsap.utils.toArray('.achievement__gallery img') as HTMLImageElement[]
+
+  return images
+      .map((img, i) => i && img.width)
+      .reduce((a, b) => a + b)
+}
+
+onMounted(() => {
+  $gsap.registerPlugin(ScrollTrigger)
+
+  $gsap.to('.achievement__gallery', {
+    x: () => -1 * findOverallImageWidth(),
+    scrollTrigger: {
+      trigger: '.achievement',
+      start: "top +=200",
+      end: "+=1000",
+      scrub: 1,
+      pin: true,
+      invalidateOnRefresh: true,
+      onUpdate: ({ progress: scrollProgress }) => {
+        progress.value = Math.round(scrollProgress * 100)
+      }
+    },
+  })
+})
+</script>
+
 <template>
-  <section id="achievement" class="achievement">
-    <h2 class="achievement__title">Dengan Beragam Prestasi</h2>
-    <div class="achievement__gallery">
-      <img src="/img/achievement-1.png" alt="Prestasi 1" height="200">
-      <img src="/img/achievement-2.jpg" alt="Prestasi 2" height="200">
+  <section id="achievement">
+    <div class="achievement">
+      <h2 class="achievement__title">Dengan Beragam Prestasi</h2>
+      <div class="achievement__gallery">
+        <img v-for="(image, index) in achievements"
+             :src="image.src"
+             :alt="image.alt"
+             width="200"
+             :class="{ 'spotlight': focusedImageIndex === index }">
+      </div>
+
+      <Transition name="fade-replace">
+        <p class="achievement__type" :key="focusedImageIndex">
+          {{ achievements[focusedImageIndex].type }}
+        </p>
+      </Transition>
+
+      <Transition name="fade-replace">
+        <p class="achievement__description" :key="focusedImageIndex">
+          {{ achievements[focusedImageIndex].description }}
+        </p>
+      </Transition>
     </div>
   </section>
+
 </template>
 
 <style lang="scss" scoped>
+#achievement {
+  position: relative;
+  overflow-x: hidden;
+}
+
 .achievement {
   width: 100%;
   margin-top: 64px;
+  min-height: 1400px;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 2;
 
   &__title,
-  &__gallery {
+  &__gallery,
+  &__description,
+  &__type {
     padding-left: 12px;
   }
 
   &__title {
     width: fit-content;
     margin-bottom: 18px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   &__gallery {
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    justify-content: start;
     gap: 12px;
-    overflow-x: auto;
 
     & > img {
+      width: 300px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 8px;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);}
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      filter: brightness(0.5);
+      transition: filter 0.3s ease-in;
+
+      &.spotlight {
+        filter: brightness(1);
+      }
+
+      @media (min-width: 768px) {
+        width: 400px;
+        height: 240px;
+      }
+    }
+  }
+
+  &__description,
+  &__type {
+    margin-top: 20px;
+  }
+
+  &__type {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+
+    & > p::first-letter {
+      font-size: 3rem;
+      font-weight: bold;
+    }
   }
 }
+
+.bg {
+  position: absolute;
+  top: 400px;
+  left: 0;
+  width: 400px;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  opacity: 0.1;
+  filter: brightness(0) invert(1);
+  //width: 200px;
+
+  & > p::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.fade-replace-enter-active,
+.fade-replace-leave-active {
+  transition: opacity 0.25s;
+}
+
+.fade-replace-enter-from,
+.fade-replace-leave-to {
+  position: absolute;
+  opacity: 0;
+}
 </style>
-<script setup lang="ts">
-</script>
