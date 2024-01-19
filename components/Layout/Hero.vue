@@ -83,16 +83,4 @@
     border-radius: 100% 0 0 0;
   }
 }
-
-@keyframes bop {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(18px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 </style>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
 const { $gsap } = useNuxtApp()
 
 const achievements = [
@@ -53,8 +51,6 @@ function findOverallImageWidth() {
 }
 
 onMounted(() => {
-  $gsap.registerPlugin(ScrollTrigger)
-
   $gsap.to('.achievement__gallery', {
     x: () => -1 * findOverallImageWidth(),
     scrollTrigger: {

@@ -20,4 +20,10 @@ export default defineNuxtConfig({
       Montserrat: '200..900',
     }
   },
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true,
+      text: true,
+    }
+  }
 })
