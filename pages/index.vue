@@ -196,7 +196,7 @@ onMounted(() => {
 
   .specialties-title {
     padding: 0 var(--padding-x) 5rem;
-    font-size: 2rem;
+    font-size: 4vw;
     position: relative;
 
     &:before,
@@ -259,9 +259,14 @@ onMounted(() => {
     }
 
     &__description {
+      font-size:2.2vw;
       grid-area: desc;
     }
-
+    @media (max-width: 480px){
+      .specialty__description{
+        font-size:1rem;
+      }
+    }
     &__job {
       position: absolute;
       top: 0;
@@ -323,6 +328,7 @@ onMounted(() => {
   }
 }
 
+
 #why-us {
   --padding-x: 2rem;
   --padding-y: 6rem;
@@ -338,7 +344,7 @@ onMounted(() => {
     height: 1000px;
 
     &__title {
-      font-size: 1.8rem;
+      font-size: 4.5vw;
       text-align: center;
       padding: 0 var(--padding-x);
     }
@@ -375,10 +381,15 @@ onMounted(() => {
 
     &__title,
     &__description {
+      font-size: 1.6vw;
       position: relative;
       z-index: 3;
     }
-
+    @media (max-width: 768px) {
+      .prospect__description{
+        font-size: large;
+      }
+    }  
     &__title {
       font-weight: bolder;
       font-size: 1.5rem;

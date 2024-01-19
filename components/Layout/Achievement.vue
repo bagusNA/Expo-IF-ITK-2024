@@ -110,17 +110,30 @@ onMounted(() => {
   z-index: 2;
   padding-bottom: 200px;
 
-  &__title,
+  &__title{
+   
+    padding:1rem;
+  }
   &__gallery,
-  &__description,
+  &__description{
+    font-size:1.5vw;
+  }
+  @media (max-width: 900px){
+    .achievement__description{
+      font-size:1rem;
+    }
+  }
   &__type {
-    padding-left: 12px;
+    
+    width: 100vw;
+    padding-left: 1rem;
+    
   }
 
   &__title {
-    width: fit-content;
     margin-bottom: 18px;
     font-size: 1.5rem;
+    padding:1rem;
   }
 
   &__gallery {
@@ -151,7 +164,14 @@ onMounted(() => {
     }
   }
 
-  &__description,
+  &__description{
+    width: 90%;
+    padding:1rem;
+    padding-right:8px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
   &__type {
     margin-top: 20px;
   }
