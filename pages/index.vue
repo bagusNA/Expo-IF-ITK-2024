@@ -8,9 +8,25 @@ onMounted(() => {
   specialties.forEach((div, index) => {
     tl.from(div, {
       xPercent: index % 2 ? 100 : -100,
+      opacity: 0,
       ease: "power2.out",
       scrollTrigger: {
         trigger: div,
+        start: '+=50 +=70%',
+        end: 'bottom +=70%',
+        scrub: 1,
+      }
+    })
+  })
+
+  const specialtyJobs = $gsap.utils.toArray(".specialty__job") as HTMLElement[]
+  specialtyJobs.forEach((div, index) => {
+    tl.from(div, {
+      xPercent: index % 2 ? -100 : 100,
+      opacity: 0,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: specialties[index],
         start: '+=50 +=70%',
         end: 'bottom +=70%',
         scrub: 1,
@@ -86,18 +102,21 @@ onMounted(() => {
             <h3 class="specialty__title">Rekayasa Perangkat Lunak</h3>
             <img src="/img/achievement-1.png" alt="Bidang Minat Rekayasa Perangkat Lunak" class="specialty__image shadow">
             <p class="specialty__description">Mempelajari tentang strategi membangun teknologi informasi sehingga teknologi yang dihasilkan mudah diperbaruhi di kemudian hari</p>
+            <p class="specialty__job">Software Engineer</p>
           </div>
 
           <div class="specialty">
             <h3 class="specialty__title">Jaringan Komputer</h3>
             <img src="/img/achievement-1.png" alt="Bidang Minat Jaringan Komputer" class="specialty__image shadow">
             <p class="specialty__description">Mempelajari tentang aritmatika dan logika untuk membangun protokol komunikasi antar komputer sehingga informasi apa pun dapat disebarkan dengan cepat dan aman</p>
+            <p class="specialty__job">Network Engineer</p>
           </div>
 
           <div class="specialty">
             <h3 class="specialty__title">Kecerdasan Buatan</h3>
             <img src="/img/achievement-1.png" alt="Bidang Minat Kecerdasan Buatan" class="specialty__image shadow">
             <p class="specialty__description">Mempelajari tentang aritmatika dan logika untuk membentuk algoritma pemecahan masalah</p>
+            <p class="specialty__job">Data Analyst</p>
           </div>
         </div>
       </section>
@@ -174,11 +193,31 @@ onMounted(() => {
 
 #specialties {
   --padding-x: 2rem;
-  --padding-y: 3rem;
 
   .specialties-title {
-    padding: var(--padding-y) var(--padding-x);
+    padding: 0 var(--padding-x) 5rem;
     font-size: 2rem;
+    position: relative;
+
+    &:before,
+    &:after {
+      --height: 24px;
+
+      content: "";
+      position: absolute;
+      bottom: 1.5rem;
+      left: -0.5rem;
+      width: 160px;
+      height: var(--height);
+      border-radius: calc(var(--height) / 2);
+      background-color: $background-light;
+    }
+
+    &:after {
+      bottom: 0;
+      left: revert;
+      right: -7rem;
+    }
   }
 
   .specialty-list {
@@ -198,6 +237,12 @@ onMounted(() => {
     gap: 1rem;
     align-content: center;
     margin: 0 var(--padding-x);
+    position: relative;
+    z-index: 5;
+
+    & > *:not(&__job) {
+      z-index: 5;
+    }
 
     &__title {
       grid-area: title;
@@ -215,6 +260,27 @@ onMounted(() => {
 
     &__description {
       grid-area: desc;
+    }
+
+    &__job {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      transform: rotate(-90deg) translateY(-20px) translateX(-10px);
+      transform-origin: center right;
+      color: $background;
+      opacity: 0.25;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: end;
+      text-transform: uppercase;
+      z-index: 1;
+      transition: opacity 250ms;
+
+      &:hover {
+        opacity: 1;
+      }
     }
 
     &:nth-child(odd) {
@@ -238,6 +304,14 @@ onMounted(() => {
 
       .specialty__image {
         margin-left: auto;
+      }
+
+      .specialty__job {
+        top: 0;
+        right: revert;
+        left: 0;
+        transform: rotate(90deg) translateY(-20px) translateX(-10px);
+        transform-origin: center left;
       }
     }
 
