@@ -105,7 +105,7 @@ onMounted(() => {
 .achievement {
   width: 100%;
   margin-top: 64px;
-  min-height: 1400px;
+  min-height: 700px;
   overflow-x: hidden;
   position: relative;
   z-index: 2;
