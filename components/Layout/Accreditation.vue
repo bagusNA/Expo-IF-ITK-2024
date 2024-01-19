@@ -94,8 +94,8 @@ onMounted(() => {
 <style lang="scss" scoped>
 #accreditation {
   position: relative;
-  height: 1600px;
-  margin-top: -350px;
+  height: 1520px;
+  margin-top: -320px;
   z-index: 1;
 
   .bg {
@@ -129,7 +129,8 @@ onMounted(() => {
   backdrop-filter: blur(120px);
 
   &__wrapper {
-    padding: 300px 0;
+    padding: 300px 32px;
+    z-index: 5;
   }
 
   &__title {
@@ -146,6 +147,7 @@ onMounted(() => {
   &__shape {
     position: absolute;
     animation: bop 8s infinite;
+    z-index: 1;
 
     &--left {
       top: 22%;
