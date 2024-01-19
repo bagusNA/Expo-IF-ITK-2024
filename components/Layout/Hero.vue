@@ -20,7 +20,7 @@
 
 <style lang="scss" scoped>
 #hero {
-  min-height: 800px;
+  min-height: 650px;
   padding-top: 96px;
   background: linear-gradient(180deg, $background 0, #d5d5b1 60%, #d2d2d2 100%);
   position: relative;
@@ -38,7 +38,7 @@
     }
 
     .subtitle {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: bold;
     }
   }
@@ -46,13 +46,34 @@
   .shape-wrapper {
     position: relative;
     height: 300px;
-    width: 300px;
     .shape-cube,
     .shape-triangle,
     .shape-laptop {
       position: absolute;
       z-index: 2;
       animation: bop 10s infinite;
+    }
+
+    &:before,
+    &:after {
+      --size: 32px;
+
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background-color: $surface;
+      animation: bop 8s infinite;
+    }
+
+    &:before {
+      --size: 24px;
+      top: revert;
+      bottom: -2rem;
+      right: 50%;
     }
 
     .shape-triangle {
@@ -77,10 +98,33 @@
     position: absolute;
     bottom: -15%;
     right: -20%;
-    height: 400px;
+    height: 320px;
     width: 130%;
     background-color: $background;
     border-radius: 100% 0 0 0;
+  }
+}
+
+@media (min-width: 640px) {
+  #hero {
+    display: flex;
+    align-items: start;
+
+    .catchphrase {
+      padding: 100px 72px 0;
+
+      .title {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .shape-wrapper {
+      flex-grow: 1;
+    }
   }
 }
 </style>
