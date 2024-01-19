@@ -4,27 +4,27 @@ const { $gsap } = useNuxtApp()
 const achievements = [
   {
     src: '/img/achievement-1.png',
-    alt: 'Prestasi 1',
-    description: 'amet Lorem ipsum sit dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
-    type: 'Hackathon',
+    alt: 'Best Mechanic Joints - Gamejam UGM',
+    description: 'Tim Ouroboros Technologies meraih juara kategori Best Mechanics Joinst dalam GameJam UGM 2023 dengan game bertajuk Wizard Legacy Grand Tower.',
+    type: 'Best Mechanic Joints Gamejam UGM',
   },
   {
     src: '/img/achievement-2.jpg',
-    alt: 'Prestasi 2',
-    description: 'Lorem ipsum sit dolor amet Lorem ipsum sit dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
-    type: 'Gemastik',
+    alt: 'Juara 1 Hackathon Balikpapan 2023',
+    description: 'Dalam kompetisi Hackathon yang diselenggarakan oleh Diskominfo Balikpapan, tim mahasiswa dari Institut Teknologi Kalimantan (ITK) meraih prestasi luar biasa. Tim yang terdiri dari Muhammad Sabran, Jo Kevin Nathaniel, dan Kristoffer Timoty Sugiarto, dibimbing oleh Nur Fajri Azhar, M.Kom., CIISA, berhasil meraih Juara 1 dengan aplikasi inovatif bernama "TKids" (TK Information Data System).',
+    type: 'Juara 1 Hackathon Balikpapan',
   },
   {
-    src: '/img/achievement-1.png',
-    alt: 'Prestasi 1',
-    description: 'dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
-    type: 'Hackathon',
+    src: '/img/achievement-3.jpg',
+    alt: 'Juara 3 Lomba Cipta Game Hari Sumpah Pemuda ke 92',
+    description: 'Lomba Cipta Game diselenggarakan pada tahun 2020 di kota Balikpapan dalam rangka memperingati hari Sumpah Pemuda yang ke-92 dan termasuk dalam rangkaian kegiatan Balikpapan Youth Festival 2020. Kegiatan Lomba Digital ini bertujuan untuk menggali potensi serta kreatifitas pemuda di Kota Balikpapan.',
+    type: 'Juara 3 Lomba Cipta Game Hari Sumpah Pemuda',
   },
   {
-    src: '/img/achievement-2.jpg',
-    alt: 'Prestasi 2',
-    description: 'Lorem ipsum sit dolor amet Lorem ipsum sit dolor amet Lorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor ametLorem ipsum sit dolor amet Lorem ipsum sit dolor amet',
-    type: 'Gemastik',
+    src: '/img/achievement-4.jpg',
+    alt: 'Juara 2 Kompetisi Aplikasi Ekraf Balikpapan',
+    description: 'Lomba Membuat Aplikasi Balikpapan Creative Festival 2021 dalam rangka memeriahkan peringatan Hari Jadi Kota Balikpapan ke-124. Lomba pengembangan aplikasi ini bertujuan untuk menguji kemampuan peserta dalam mengembangkan ide kreatif untuk memberikan solusi dan inovasi masalah Indonesia, khususnya Balikpapan dalam bentuk aplikasi berkualitas tinggi. Fokusnya adalah aspek inovasi yang kreatif dan pemanfaatan TIK untuk mencerdaskan masyarakat Indonesia sehingga aplikasi yang dihasilkan mampu memberikan dampak untuk kemandirian dan kecerdasan masyarakat umum.',
+    type: 'Juara 2 Kompetisi Aplikasi Ekraf Balikpapan',
   },
 ]
 
@@ -108,6 +108,7 @@ onMounted(() => {
   overflow-x: hidden;
   position: relative;
   z-index: 2;
+  padding-bottom: 200px;
 
   &__title,
   &__gallery,

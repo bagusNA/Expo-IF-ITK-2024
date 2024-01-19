@@ -100,21 +100,28 @@ onMounted(() => {
         <div class="specialty-list">
           <div class="specialty">
             <h3 class="specialty__title">Rekayasa Perangkat Lunak</h3>
-            <img src="/img/achievement-1.png" alt="Bidang Minat Rekayasa Perangkat Lunak" class="specialty__image shadow">
+            <img src="/img/software-engineer.jpg" alt="Bidang Minat Rekayasa Perangkat Lunak" class="specialty__image shadow">
             <p class="specialty__description">Mempelajari tentang strategi membangun teknologi informasi sehingga teknologi yang dihasilkan mudah diperbaruhi di kemudian hari</p>
             <p class="specialty__job">Software Engineer</p>
           </div>
 
           <div class="specialty">
             <h3 class="specialty__title">Jaringan Komputer</h3>
-            <img src="/img/achievement-1.png" alt="Bidang Minat Jaringan Komputer" class="specialty__image shadow">
+            <img src="/img/network-engineer.jpg" alt="Bidang Minat Jaringan Komputer" class="specialty__image shadow">
             <p class="specialty__description">Mempelajari tentang aritmatika dan logika untuk membangun protokol komunikasi antar komputer sehingga informasi apa pun dapat disebarkan dengan cepat dan aman</p>
             <p class="specialty__job">Network Engineer</p>
           </div>
 
           <div class="specialty">
-            <h3 class="specialty__title">Kecerdasan Buatan</h3>
-            <img src="/img/achievement-1.png" alt="Bidang Minat Kecerdasan Buatan" class="specialty__image shadow">
+            <h3 class="specialty__title">Jaringan Komputer</h3>
+            <img src="/img/network-engineer.jpg" alt="Bidang Minat Jaringan Komputer" class="specialty__image shadow">
+            <p class="specialty__description">Mempelajari tentang aritmatika dan logika untuk membangun protokol komunikasi antar komputer sehingga informasi apa pun dapat disebarkan dengan cepat dan aman</p>
+            <p class="specialty__job">Network Engineer</p>
+          </div>
+
+          <div class="specialty">
+            <h3 class="specialty__title">Kecerdasan Buatan dan Data Analis</h3>
+            <img src="/img/data-analyst.jpg" alt="Bidang Minat Kecerdasan Buatan" class="specialty__image shadow">
             <p class="specialty__description">Mempelajari tentang aritmatika dan logika untuk membentuk algoritma pemecahan masalah</p>
             <p class="specialty__job">Data Analyst</p>
           </div>
