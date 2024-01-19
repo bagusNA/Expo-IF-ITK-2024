@@ -33,5 +33,6 @@
   position: fixed;
   top: -0.8rem;
   left: -1.65rem;
+  z-index: 100;
 }
 </style>
