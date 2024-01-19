@@ -11,14 +11,14 @@ onMounted(() => {
       .to('.loading__logo', {
         duration: 1,
         opacity: 0,
+        zIndex: 202,
       }, '<')
       .to('.loading__logo', {
         duration: 1.5,
-        ease: "power2.out",
+        ease: "power2.inOut",
         opacity: 1,
         filter: "brightness(0%) invert(1)",
-        zIndex: 10,
-      }, '-=.5')
+      }, '-=0.5')
       .to('.loading', {
         duration: 1.5,
         opacity: 0,
@@ -45,7 +45,7 @@ onMounted(() => {
   display: grid;
   align-items: center;
   justify-content: center;
-  z-index: 5;
+  z-index: 200;
   overflow-y: hidden;
 
   &,
@@ -68,7 +68,7 @@ onMounted(() => {
     position: fixed;
     overflow-y: hidden;
     clip-path: circle(var(--clip) at 100% 100%);
-    z-index: 7;
+    z-index: 201;
   }
 }
 
