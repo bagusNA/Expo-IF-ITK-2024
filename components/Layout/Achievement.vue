@@ -55,7 +55,7 @@ onMounted(() => {
     x: () => -1 * findOverallImageWidth(),
     scrollTrigger: {
       trigger: '.achievement',
-      start: "top +=200",
+      start: "top +=10%",
       end: "+=1000",
       scrub: 1,
       pin: true,
