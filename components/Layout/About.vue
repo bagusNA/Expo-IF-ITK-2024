@@ -31,10 +31,11 @@
     margin: 0 auto;
     text-align: center;
     font-size: 0.9rem;
+    font-size:1.6vw;
   }
 
   &__logo {
-    width: 200px;
+    width: 20vw;
     margin-top: 32px;
     margin-bottom: 24px;
     filter: brightness(0) invert(1);
@@ -49,7 +50,7 @@
       margin-bottom: 18px;
       font-weight: 600;
       position: relative;
-      font-size: 0.85rem;
+      font-size: 1.5vw;
 
       &:before,
       &:after {
@@ -78,12 +79,21 @@
     }
 
     &__description {
-      padding: 0 24px;
-      font-size: 0.8rem;
+      padding: 1.2% 1%;
+      font-size: 1.5vw;
       font-weight: 500;
     }
+      
+    }
   }
-}
+  @media (max-width: 480px){
+      .about__logo{
+        width:40vw;
+      }
+      .about__section__description{
+        font-size:3vw;
+      }
+    }
 </style>
 <script setup lang="ts">
 </script>

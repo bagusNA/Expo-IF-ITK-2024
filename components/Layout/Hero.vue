@@ -33,12 +33,12 @@
     z-index: 4;
 
     .title {
-      font-size: 2rem;
+      font-size: 6vw;
       font-weight: bolder;
     }
 
     .subtitle {
-      font-size: 0.9rem;
+      font-size: 2.5vw;
       font-weight: bold;
     }
   }
@@ -113,13 +113,8 @@
     .catchphrase {
       padding: 100px 72px 0;
 
-      .title {
-        font-size: 2.5rem;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-      }
+     
+     
     }
 
     .shape-wrapper {

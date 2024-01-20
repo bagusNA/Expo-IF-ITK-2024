@@ -135,12 +135,12 @@ onMounted(() => {
 
   &__title {
     margin-top: 0.35rem;
-    font-size: 2.25rem;
+    font-size:7vw;
     font-weight: 900;
   }
 
   &__subtitle {
-    font-size: 1.35rem;
+    font-size: 3vw;
     font-weight: 600;
   }
 
